@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок складу</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Розрахунок складу</h1>
+        <form method="post">
+            <label>HP, %: <input type="number" step=".01" name="hp" value="1.9" required></label>
+            <label>CP, %: <input type="number" step=".01" name="cp" value="21.1" required></label>
+            <label>SP, %: <input type="number" step=".01" name="sp" value="2.6" required></label>
+            <label>NP, %: <input type="number" step=".01" name="np" value="0.2" required></label>
+            <label>OP, %: <input type="number" step=".01" name="op" value="7.1" required></label>
+            <label>WP, %: <input type="number" step=".01" name="wp" value="53" required></label>
+            <label>AP, %: <input type="number" step=".01" name="ap" value="14.1" required></label>
+            <button type="submit">Розрахувати</button>
+        </form>
+        <p>{{ .Result }}</p>
+        <a href="/">Назад</a>
+    </div>
+</body>
+</html>

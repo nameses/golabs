@@ -1,0 +1,26 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <form method="post">
+            <label>Вуглець:     <input type="number" step=".01" value="85.5" name="carbon" required></label>
+            <label>Водень:      <input type="number" step=".01" value="11.2" name="hydrogen" required></label>
+            <label>Кисень:      <input type="number" step=".01" value="0.8" name="oxygen" required></label>
+            <label>Сірка:       <input type="number" step=".01" value="2.5" name="sulfur" required></label>
+            <label>Нижча теплота згоряння: <input type="number" step=".01" value="40.4" name="calorific_value" required></label>
+            <label>Вологість:   <input type="number" step=".01" value="2" name="moisture" required></label>
+            <label>Зольність:        <input type="number" step=".01" value="0.15" name="ash" required></label>
+            <label>Ванадій:     <input type="number" step=".01" value="333.3" name="vanadium" required></label>
+            <button type="submit">Розрахувати</button>
+        </form>
+        <p>{{ .Result }}</p>
+        <a href="/">Назад</a>
+    </div>
+</body>
+</html>
