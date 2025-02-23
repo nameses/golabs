@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .HeaderTitle }}</title>
+    <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ .HeaderTitle }}</h1>
+        <form method="post">
+            <label>
+                Об’єм вугілля (т):
+                <input type="number" step="0.01" name="coal_input" value="1096363" required>
+            </label>
+            <label>
+                Об’єм мазуту (т):
+                <input type="number" step="0.01" name="mazut_input" value="70945" required>
+            </label>
+            <label>
+                Об’єм газу (тис. м3):
+                <input type="number" step="0.01" name="gas_input" value="84762" required>
+            </label>
+            <button type="submit">Обчислити</button>
+        </form>
+        {{ if .EmissionOutput }}
+        <div class="result">
+            <p>{{ .EmissionOutput }}</p>
+        </div>
+        {{ end }}
+    </div>
+</body>
+</html>

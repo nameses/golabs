@@ -66,7 +66,7 @@ func task1Handler(w http.ResponseWriter, r *http.Request) {
 
 		var result string
 
-		if total != 100.0 {
+		if total >= 101.0 && total <= 99.0 {
 			result = "Сума компонентів повинна бути 100%"
 		} else {
 			result = "Результат обчислення:\n"
