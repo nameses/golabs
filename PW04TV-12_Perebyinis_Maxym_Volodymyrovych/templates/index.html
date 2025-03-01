@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок Кабелів</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Розрахунок Кабелів</h1>
+        <label for="sm">Розрахункове навантаження Sm, кВ:</label>
+        <input type="number" id="sm" value="1300">
+        <label for="ik">Струм КЗ Iк, А:</label>
+        <input type="number" id="ik" value="2500">
+        <label for="tf">Фіктивний час вимикання навантаження Tf, с:</label>
+        <input type="number" id="tf" value="2.5">
+        <button onclick="calculate()">Розрахувати</button>
+        <pre id="results"></pre>
+    </div>
+    <script>
+        function calculate() {
+            const sm = parseFloat(document.getElementById("sm").value);
+            const ik = parseFloat(document.getElementById("ik").value);
+            const tf = parseFloat(document.getElementById("tf").value);
+
+            fetch("/calculate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sm, ik, tf })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("results").textContent =
+                    `Струм КЗ нормальний режим: ${data.im.toFixed(1)}\n` +
+                    `Струм КЗ аварійний режим: ${data.imPa.toFixed(1)}\n` +
+                    `Економічний переріз: ${data.sEk.toFixed(1)}\n` +
+                    `Мінімальний переріз: ${data.sVsS.toFixed(1)}`;
+            });
+        }
+    </script>
+</body>
+</html>

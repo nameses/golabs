@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Розрахунок Підстанцій</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Розрахунок Підстанцій</h1>
+        <label>Rsn (Ω):</label>
+        <input type="number" id="rsn" value="10.65">
+        <label>Xsn (Ω):</label>
+        <input type="number" id="xsn" value="24.02">
+        <label>Rsn min (Ω):</label>
+        <input type="number" id="rsnMin" value="34.88">
+        <label>Xsn min (Ω):</label>
+        <input type="number" id="xsnMin" value="65.68">
+        <button onclick="calculate('/api/calc3')">Розрахувати</button>
+        <pre id="results"></pre>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
