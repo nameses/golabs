@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Розрахунок прибутку від сонячних електростанцій</h1>
+        <form id="calc-form">
+            <label>Середньодобова потужність: <input type="number" id="power" step="0.1" value="5.0"></label>
+            <label>Середньоквадратичне відхилення поточне: <input type="number" id="deviation_current" step="0.1" value="1.0"></label>
+            <label>Середньоквадратичне відхилення після відновлення: <input type="number" id="deviation_final" step="0.1" value="0.25"></label>
+            <label>Вартість електроенергії: <input type="number" id="price" step="0.1" value="7.0"></label>
+            <button type="submit">Розрахувати</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <p><strong>Прибуток поточний:</strong> <span id="income_current"></span></p>
+            <p><strong>Штраф поточний:</strong> <span id="penalty_current"></span></p>
+            <p><strong>Прибуток після вдосконалення:</strong> <span id="income_after"></span></p>
+            <p><strong>Штраф після вдосконалення:</strong> <span id="penalty_after"></span></p>
+            <p><strong>Кінцевий прибуток:</strong> <span id="income_final"></span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
