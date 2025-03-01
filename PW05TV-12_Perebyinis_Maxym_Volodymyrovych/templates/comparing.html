@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Порівняння двох систем</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Порівняння двох систем</h1>
+        <label>Довжина ПЛ-110кВ (км):</label>
+        <input type="number" id="quantityPl110kV" value="1.0">
+        <label>Кількість приєднань 10 кВ:</label>
+        <input type="number" id="quantityAttachments" value="1.0">
+        <button onclick="calculate('/api/comparing')">Обрахувати</button>
+        <pre id="results"></pre>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
